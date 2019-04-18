@@ -16,5 +16,10 @@ pipeline{
                                 sh "mvn package"
                         }
                 }
+                stage('--deployment--'){
+                        steps{
+                                sh "cp /var/lib/jenkins/workspace/Test/target/movieapp.war /home/daniellake89/wildfly-10.1.0.Final/standalone/deployments
+                        }
+                }
         }
 }
